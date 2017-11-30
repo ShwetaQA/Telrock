@@ -10,15 +10,19 @@ The Telrock repository consists of :
 3. The Other two - 'Telrock_TestCases' and 'Telrock Bug Report' files are the part of manual Testing.
 
 
+
 Note: The excel testcases are used to create cucumber feature scenario.
 
 
 
 Also, this project runs on Mac with Firefox as case-based multiple drivers code is not yet added
 
+
 Pre-requisites:
 Mac OS
 Firefox browser should be installed
+
+
 
 In order to make it run on windows - 1. Install gecko driver .exe and place it in BrowserDrivers folder.
                                      2. In the Testscript file 'ItemSearch_Test' change system property as 
