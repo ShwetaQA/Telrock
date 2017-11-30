@@ -1,0 +1,104 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Telrock_API_Test",
+		"_postman_id": "e248bac9-7144-dc72-86e6-922ee9c0366f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PUT-SuccsessfulLoginTest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200 after successful login\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://usdemo-uat.telrock.com/telrock-tas-war/rest/idv/process",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"idvQuestionVO\":{\"id\":1},\"answer\":\"114044885347\"},{\"idvQuestionVO\":{\"id\":2},\"answer\":\"01-01-1971\"},{\"idvQuestionVO\":{\"id\":3},\"answer\":\"EC88AB\"},{\"idvQuestionVO\":{\"id\":4},\"answer\":\"9090808\"}]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT-FailedLoginTest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401 after failed login\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://usdemo-uat.telrock.com/telrock-tas-war/rest/idv/process",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"idvQuestionVO\":{\"id\":1},\"answer\":\"abc114044885347\"},{\"idvQuestionVO\":{\"id\":2},\"answer\":\"01-01-1971\"},{\"idvQuestionVO\":{\"id\":3},\"answer\":\"EC88AB\"},{\"idvQuestionVO\":{\"id\":4},\"answer\":\"9090808\"}]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT-Missging_Information_In_Login_Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401 after supplying insufficient data\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://usdemo-uat.telrock.com/telrock-tas-war/rest/idv/process",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"idvQuestionVO\":{\"id\":2},\"answer\":\"01-01-1971\"},{\"idvQuestionVO\":{\"id\":3},\"answer\":\"EC88AB\"},{\"idvQuestionVO\":{\"id\":4},\"answer\":\"9090808\"}]"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
