@@ -5,7 +5,7 @@ The Telrock repository consists of :
 
 1. The Automation test suite is present under 'item-search' folder. (The Automation framework is created using Webdriver-Cucumber-Java using Junit framework)
 
-2. The API test is present under 'Telrock_API_Test.postman_collection' file.
+2. The API test is present under 'Telrock_API_Test.postman_collection' file. (Developed using postman. To make it run, import it into your postman interface)
 
 3. The Other two - 'Telrock_TestCases' and 'Telrock Bug Report' files are the part of manual Testing.
 
