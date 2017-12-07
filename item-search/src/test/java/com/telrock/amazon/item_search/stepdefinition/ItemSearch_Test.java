@@ -93,6 +93,6 @@ public class ItemSearch_Test {
 	@After
 	public void endTest() {
 		softAssert.assertAll();
-		//driver.close();
+		driver.close();
 	}
 }
